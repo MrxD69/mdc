@@ -92,7 +92,7 @@ import { ref, watch, computed } from 'vue'
 import { parseMarkdown } from '../parser'
 import type { MDCParseOptions } from '@nuxtjs/mdc'
 import { CodeToTokenTransformStream } from 'shiki-stream'
-import { getHighlighter } from 'shiki'
+import { createHighlighter } from 'shiki'
 
 interface MDCStreamProps {
   value?: string
@@ -134,7 +134,7 @@ A composable for programmatic control over streaming content:
 ```typescript
 import { ref, Ref } from 'vue'
 import { CodeToTokenTransformStream } from 'shiki-stream'
-import { getHighlighter, type Highlighter } from 'shiki'
+import { createHighlighter, type Highlighter } from 'shiki'
 
 export interface MDCStreamOptions {
   language?: string
@@ -150,7 +150,7 @@ export function useMDCStream(options: MDCStreamOptions = {}) {
 
   const initHighlighter = async () => {
     if (!highlighter.value) {
-      highlighter.value = await getHighlighter({
+      highlighter.value = await createHighlighter({
         themes: [options.theme || 'github-dark'],
         langs: [options.language || 'text']
       })
