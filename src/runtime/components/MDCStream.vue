@@ -9,7 +9,7 @@ import { ref, watch, computed } from 'vue'
 import { parseMarkdown } from '../parser'
 import type { MDCParseOptions } from '@nuxtjs/mdc'
 import { CodeToTokenTransformStream } from 'shiki-stream'
-import { getHighlighter } from 'shiki'
+import { createHighlighter } from 'shiki'
 
 interface MDCStreamProps {
   value?: string
@@ -79,7 +79,7 @@ const createStreamingHighlighter = async () => {
   if (!props.isStreaming) return null
 
   try {
-    const highlighter = await getHighlighter({
+    const highlighter = await createHighlighter({
       themes: [props.streamTheme],
       langs: [props.streamLanguage]
     })

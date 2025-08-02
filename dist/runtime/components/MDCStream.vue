@@ -8,7 +8,7 @@
 import { ref, watch, computed } from "vue";
 import { parseMarkdown } from "../parser";
 import { CodeToTokenTransformStream } from "shiki-stream";
-import { getHighlighter } from "shiki";
+import { createHighlighter } from "shiki";
 const props = defineProps({
   value: { type: String, required: false },
   tag: { type: String, required: false, default: "div" },
@@ -56,7 +56,7 @@ watch(() => props.value, async (newValue) => {
 const createStreamingHighlighter = async () => {
   if (!props.isStreaming) return null;
   try {
-    const highlighter = await getHighlighter({
+    const highlighter = await createHighlighter({
       themes: [props.streamTheme],
       langs: [props.streamLanguage]
     });
