@@ -1,0 +1,9 @@
+{
+  "name": "@nuxtjs/mdc",
+  "configKey": "mdc",
+  "version": "0.17.2",
+  "builder": {
+    "@nuxt/module-builder": "1.0.1",
+    "unbuild": "3.5.0"
+  }
+}
