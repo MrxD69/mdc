@@ -119,6 +119,9 @@ importers:
       shiki:
         specifier: ^3.8.0
         version: 3.8.0
+      shiki-stream:
+        specifier: 0.1.2
+        version: 0.1.2(vue@3.5.17(typescript@5.8.3))
       ufo:
         specifier: ^1.6.1
         version: 1.6.1
@@ -5099,6 +5102,17 @@ packages:
   shell-quote@1.8.3:
     resolution: {integrity: sha512-ObmnIF4hXNg1BqhnHmgbDETF8dLPCggZWBjkQfhZpbszZnYur5DUljTcCHii5LC3J5E0yeO/1LIMyH+UvHQgyw==}
     engines: {node: '>= 0.4'}
+
+  shiki-stream@0.1.2:
+    resolution: {integrity: sha512-VtzJT2Sn2vwFoJEhKv71/M6Cl7e/m6p0vIVDgJsYKUpV7E+0zayJsuVuU2ltiSEeWUrqncHSPx8i/xKrRqK6Mw==}
+    peerDependencies:
+      react: ^19.0.0
+      vue: ^3.2.0
+    peerDependenciesMeta:
+      react:
+        optional: true
+      vue:
+        optional: true
 
   shiki@3.8.0:
     resolution: {integrity: sha512-yPqK0y68t20aakv+3aMTpUMJZd6UHaBY2/SBUDowh9M70gVUwqT0bf7Kz5CWG0AXfHtFvXCHhBBHVAzdp0ILoQ==}
@@ -12115,6 +12129,12 @@ snapshots:
   shebang-regex@3.0.0: {}
 
   shell-quote@1.8.3: {}
+
+  shiki-stream@0.1.2(vue@3.5.17(typescript@5.8.3)):
+    dependencies:
+      '@shikijs/core': 3.8.0
+    optionalDependencies:
+      vue: 3.5.17(typescript@5.8.3)
 
   shiki@3.8.0:
     dependencies:

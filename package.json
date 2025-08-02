@@ -54,7 +54,6 @@
     }
   },
   "scripts": {
-    "prepack": "nuxt-module-build prepare; nuxt-module-build build",
     "build": "nuxt-module-build prepare; nuxt-module-build build",
     "dev": "npm run dev:prepare; nuxi dev playground",
     "dev:build": "nuxi build playground",
