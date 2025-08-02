@@ -1,0 +1,13 @@
+{
+  "extends": "./.nuxt/tsconfig.json",
+  "exclude": [
+    "test/*",
+    "node_modules/*",
+    "playground/*",
+    "docs/*"
+  ],
+  "include": [
+    "src",
+    "src/shim.d.ts"
+  ]
+}
